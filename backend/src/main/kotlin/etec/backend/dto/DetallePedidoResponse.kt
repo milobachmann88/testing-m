@@ -6,7 +6,7 @@ import tools.jackson.databind.ser.std.ToStringSerializer
 import java.math.BigDecimal
 
 data class DetallePedidoResponse(
-    val id: Long,
+    val id: Int? = null,
     val cantidad: Int,
 
     @JsonSerialize(using = ToStringSerializer::class)
@@ -19,12 +19,12 @@ data class DetallePedidoResponse(
     companion object {
         fun fromEntity(d: DetallePedido): DetallePedidoResponse =
             DetallePedidoResponse(
-                id = d.id ?: 0L,
+                id = d.id ?: 0,
                 cantidad = d.cantidad,
                 precioUnitario = d.precioUnitario,
-                pedidoId = d.pedido?.id ?: 0L,
-                productoId = d.producto?.id ?: 0L,
-                productoNombre = d.producto?.nombre
+                pedidoId = d.pedido.id ?: 0L,
+                productoId = d.producto.id ?: 0L,
+                productoNombre = d.producto.nombre
             )
     }
 }

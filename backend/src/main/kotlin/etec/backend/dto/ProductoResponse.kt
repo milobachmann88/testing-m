@@ -6,7 +6,7 @@ import tools.jackson.databind.ser.std.ToStringSerializer
 import java.math.BigDecimal
 
 data class ProductoResponse(
-    val id: Long,
+    val id: Long? = null,
     val nombre: String,
     val descripcion: String?,
     val categoria: String?,

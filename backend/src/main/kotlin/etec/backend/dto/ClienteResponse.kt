@@ -3,7 +3,7 @@ package etec.backend.dto
 import etec.backend.entity.Cliente
 
 data class ClienteResponse(
-    val id: Long,
+    val id: Long? = null,
     val nombre: String,
     val telefono: String?,
     val email: String?,

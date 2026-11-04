@@ -4,8 +4,8 @@ import etec.backend.entity.Pedido
 import java.time.LocalDateTime
 
 data class PedidoResponse(
-    val id: Long,
-    val fecha: LocalDateTime,
+    val id: Long? = null,
+    val fecha: LocalDateTime?,
     val fechaEntrega: LocalDateTime?,
     val estado: String?,
     val clienteId: Long,

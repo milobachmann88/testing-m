@@ -1,40 +1,45 @@
 package etec.backend.entity
 
-import jakarta.persistence.Entity
-import jakarta.persistence.Table
-import jakarta.persistence.Id
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Column
-import jakarta.persistence.OneToMany
-import jakarta.persistence.CascadeType
+import jakarta.persistence.*
 import java.math.BigDecimal
 
 @Entity
-@Table(name = "producto")
+@Table(name = "productos")
 class Producto(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
+    @Column(nullable = false, length = 120)
+    var nombre: String,
+
+    @Column(nullable = false, length = 300)
+    var descripcion: String,
+
     @Column(nullable = false, length = 100)
-    var nombre: String = "",
+    var categoria: String,
 
-    @Column(length = 300)
-    var descripcion: String? = null,
-
-    @Column(length = 50)
-    var categoria: String? = null,
+    @Column(name = "personalizado")
+    var personalizado: Boolean? = null,
 
     @Column(nullable = false, precision = 10, scale = 2)
-    var precio: BigDecimal = BigDecimal.ZERO,
+    var precio: BigDecimal,
 
     @Column(nullable = false)
-    var stock: Int = 0,
+    var stock: Int,
 
     @Column(nullable = false)
-    var activo: Boolean = true,
-
-    @OneToMany(mappedBy = "producto", cascade = [CascadeType.ALL], orphanRemoval = true)
-    var detalles: MutableList<DetallePedido> = mutableListOf()
-)
+    var activo: Boolean
+) {
+    // Constructor vacío requerido por JPA (si no usas el plugin no-arg de Kotlin)
+    constructor() : this(
+        id = null,
+        nombre = "",
+        descripcion = "",
+        categoria = "",
+        personalizado = null,
+        precio = BigDecimal.ZERO,
+        stock = 0,
+        activo = false
+    )
+}

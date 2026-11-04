@@ -1,13 +1,6 @@
 package etec.backend.entity
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.Table
-import jakarta.persistence.OneToMany
-import jakarta.persistence.CascadeType
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "cliente")
@@ -17,7 +10,7 @@ class Cliente(
     var id: Long? = null,
 
     @Column(nullable = false, length = 100)
-    var nombre: String = "",
+    var nombre: String,
 
     @Column(length = 30)
     var telefono: String? = null,
@@ -26,8 +19,14 @@ class Cliente(
     var email: String? = null,
 
     @Column(length = 200)
-    var direccion: String? = null,
-
-    @OneToMany(mappedBy = "cliente", cascade = [CascadeType.ALL], orphanRemoval = true)
-    var pedidos: MutableList<Pedido> = mutableListOf()
-)
+    var direccion: String? = null
+) {
+    // Constructor vacío requerido por JPA
+    constructor() : this(
+        id = null,
+        nombre = "",
+        telefono = null,
+        email = null,
+        direccion = null
+    )
+}

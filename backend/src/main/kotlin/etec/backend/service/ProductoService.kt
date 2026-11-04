@@ -32,8 +32,8 @@ class ProductoService(
     fun crear(req: ProductoRequest): ProductoResponse {
         val nuevoProducto = Producto(
             nombre = req.nombre,
-            descripcion = req.descripcion,
-            categoria = req.categoria,
+            descripcion = req.descripcion.toString(),
+            categoria = req.categoria.toString(),
             precio = req.precio,
             stock = req.stock,
             activo = req.activo ?: true
@@ -48,8 +48,8 @@ class ProductoService(
             .orElseThrow { ProductoNoEncontradoException(id) }
 
         productoExistente.nombre = req.nombre
-        productoExistente.descripcion = req.descripcion
-        productoExistente.categoria = req.categoria
+        productoExistente.descripcion = req.descripcion.toString()
+        productoExistente.categoria = req.categoria.toString()
         productoExistente.precio = req.precio
         productoExistente.stock = req.stock
         productoExistente.activo = req.activo ?: productoExistente.activo
