@@ -7,7 +7,7 @@ import jakarta.persistence.*
 class Cliente(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null,
+    var id: Int? = null,
 
     @Column(nullable = false, length = 100)
     var nombre: String,

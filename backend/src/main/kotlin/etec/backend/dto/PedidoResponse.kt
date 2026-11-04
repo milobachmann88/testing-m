@@ -8,7 +8,7 @@ data class PedidoResponse(
     val fecha: LocalDateTime?,
     val fechaEntrega: LocalDateTime?,
     val estado: String?,
-    val clienteId: Long,
+    val clienteId: Int,
     val clienteNombre: String?
 ) {
     companion object {
@@ -18,7 +18,7 @@ data class PedidoResponse(
                 fecha = p.fecha,
                 fechaEntrega = p.fechaEntrega,
                 estado = p.estado,
-                clienteId = p.cliente?.id ?: 0L,
+                clienteId = p.cliente?.id ?: 0,
                 clienteNombre = p.cliente?.nombre
             )
     }
