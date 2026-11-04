@@ -1,10 +1,10 @@
-package etec.bdd.service
+package etec.backend.service
 
-import etec.bdd.dto.ClienteRequest
-import etec.bdd.dto.ClienteResponse
-import etec.bdd.entity.Cliente
-import etec.bdd.exception.ClienteNoEncontradoException
-import etec.bdd.repository.ClienteRepository
+import etec.backend.dto.ClienteRequest
+import etec.backend.dto.ClienteResponse
+import etec.backend.entity.Cliente
+import etec.backend.exception.ClienteNoEncontradoException
+import etec.backend.repository.ClienteRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service

@@ -1,6 +1,6 @@
-package etec.bdd.dto
+package etec.backend.dto
 
-import etec.bdd.entity.Pedido
+import etec.backend.entity.Pedido
 import java.time.LocalDateTime
 
 data class PedidoResponse(

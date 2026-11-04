@@ -1,4 +1,4 @@
-package etec.bdd.entity
+package etec.backend.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Table

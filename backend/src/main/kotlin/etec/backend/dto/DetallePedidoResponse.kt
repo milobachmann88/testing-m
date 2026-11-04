@@ -1,6 +1,6 @@
-package etec.bdd.dto
+package etec.backend.dto
 
-import etec.bdd.entity.DetallePedido
+import etec.backend.entity.DetallePedido
 import tools.jackson.databind.annotation.JsonSerialize
 import tools.jackson.databind.ser.std.ToStringSerializer
 import java.math.BigDecimal

@@ -1,6 +1,6 @@
-package etec.bdd.dto
+package etec.backend.dto
 
-import etec.bdd.entity.Cliente
+import etec.backend.entity.Cliente
 
 data class ClienteResponse(
     val id: Long,

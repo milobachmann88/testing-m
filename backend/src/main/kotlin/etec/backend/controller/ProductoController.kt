@@ -1,8 +1,8 @@
-package etec.bdd.controller
+package etec.backend.controller
 
-import etec.bdd.dto.ProductoRequest
-import etec.bdd.dto.ProductoResponse
-import etec.bdd.service.ProductoService
+import etec.backend.dto.ProductoRequest
+import etec.backend.dto.ProductoResponse
+import etec.backend.service.ProductoService
 import jakarta.validation.Valid
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

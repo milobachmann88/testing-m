@@ -1,4 +1,4 @@
-package etec.bdd.exception
+package etec.backend.exception
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

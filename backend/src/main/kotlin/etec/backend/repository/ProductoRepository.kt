@@ -1,6 +1,6 @@
-package etec.bdd.repository
+package etec.backend.repository
 
-import etec.bdd.entity.Producto
+import etec.backend.entity.Producto
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
