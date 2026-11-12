@@ -9,10 +9,16 @@ data class ProductoResponse(
     val id: Long? = null,
     val nombre: String,
     val descripcion: String?,
+    val imagen: String,
+    val imageAlt: String?,
     val categoria: String?,
 
     @JsonSerialize(using = ToStringSerializer::class)
     val precio: BigDecimal,
+
+    val material: String?,
+    val tamano: String?,
+    val colores: String?,
 
     val stock: Int,
     val activo: Boolean
@@ -23,8 +29,13 @@ data class ProductoResponse(
                 id = p.id ?: 0L,
                 nombre = p.nombre,
                 descripcion = p.descripcion,
+                imagen = p.imagen,
+                imageAlt = p.imageAlt,
                 categoria = p.categoria,
                 precio = p.precio,
+                material = p.material,
+                tamano = p.tamano,
+                colores = p.colores,
                 stock = p.stock,
                 activo = p.activo
             )

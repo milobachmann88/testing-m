@@ -15,12 +15,21 @@ data class ProductoRequest(
     @field:Size(max = 300, message = "La descripción no puede superar los 300 caracteres")
     val descripcion: String?,
 
+    @field:NotBlank(message = "La imagen es obligatoria")
+    val imagen: String,
+
+    val imageAlt: String?,
+
     @field:Size(max = 50, message = "La categoría no puede superar los 50 caracteres")
     val categoria: String?,
 
     @field:NotNull(message = "El precio es obligatorio")
     @field:DecimalMin(value = "0.0", inclusive = true, message = "El precio debe ser mayor o igual a 0")
     val precio: BigDecimal,
+
+    val material: String?,
+    val tamano: String?,
+    val colores: String?,
 
     @field:NotNull(message = "El stock es obligatorio")
     @field:Min(value = 0, message = "El stock no puede ser negativo")

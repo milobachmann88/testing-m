@@ -33,8 +33,14 @@ class ProductoService(
         val nuevoProducto = Producto(
             nombre = req.nombre,
             descripcion = req.descripcion.toString(),
+            imagen = req.imagen,
+            imageAlt = req.imageAlt,
+            categoria = req.categoria.toString(),
             categoria = req.categoria.toString(),
             precio = req.precio,
+            tamano = req.tamano,
+            colores = req.colores,
+            stock = req.stock,
             stock = req.stock,
             activo = req.activo ?: true
         )
@@ -49,8 +55,13 @@ class ProductoService(
 
         productoExistente.nombre = req.nombre
         productoExistente.descripcion = req.descripcion.toString()
+        productoExistente.imagen = req.imagen
+        productoExistente.imageAlt = req.imageAlt
         productoExistente.categoria = req.categoria.toString()
         productoExistente.precio = req.precio
+        productoExistente.material = req.material
+        productoExistente.tamano = req.tamano
+        productoExistente.colores = req.colores
         productoExistente.stock = req.stock
         productoExistente.activo = req.activo ?: productoExistente.activo
 
