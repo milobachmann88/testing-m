@@ -36,11 +36,9 @@ class ProductoService(
             imagen = req.imagen,
             imageAlt = req.imageAlt,
             categoria = req.categoria.toString(),
-            categoria = req.categoria.toString(),
             precio = req.precio,
             tamano = req.tamano,
             colores = req.colores,
-            stock = req.stock,
             stock = req.stock,
             activo = req.activo ?: true
         )
